@@ -1,0 +1,41 @@
+
+.LoginPage {
+    background-image: url('https://cdn.touracti.com/touracti/img/product_images/extra_large_images/Sagrada%20Familia%20with%20Tower%20access%20Barcelona%202.png');
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-style {
+  display: flex;
+  align-items: center;
+  margin-top:-10000
+};
+
+.panel-style {
+  background: gray;
+  border: 0;
+  padding-left: 20;
+  padding-left: 20;
+  width: 300,
+};
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}

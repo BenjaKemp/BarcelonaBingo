@@ -1,0 +1,68 @@
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.wrapper {
+
+    align-items: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: auto;
+  border: black;
+}
+
+.card {
+  margin: 10px;
+  text-align: center;
+  height: 150px;
+  width: 150px;
+  border: 1px solid blue;
+  border-radius: 5px;
+}
+.seen {
+  margin: 10px;
+  text-align: center;
+  height: 150px;
+  width: 150px;
+  border: 1px solid blue;
+  border-radius: 5px;
+  background-color: black;
+  opacity: 50%;
+}
+
+.button-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bingoBoard {
+
+border-width: 2px;
+height: 600px;
+width: 600px
+}
+.detail {
+  height: 800px;
+
+}
+
+.inner-detail {
+  position: absolute;
+  width: 500px;
+  height: 400px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+  background: red;
+  opacity: 5;
+  border-radius: 5px;
+
+}
+.inner-detail {}
+
+  .seen {
+    background-color: black;
+  }
