@@ -5,6 +5,12 @@ justify-content: center;
 
 
 }
+
+.fullscreen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 .SlideIn-appear {
   transform: translateX(30px);
   opacity: 0;

@@ -31,11 +31,10 @@ class Board extends Component {
   }
   render() {
     return (
-<div className="background">
       <div className="bingoBoard shadow-drop-2-center">
-
-        <div className="wrapper">{this.renderList()}</div>
-      </div>
+        <div className="background">
+          <div className="wrapper">{this.renderList()}</div>
+        </div>
     </div>
     );
   }

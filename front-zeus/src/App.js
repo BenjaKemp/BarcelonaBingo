@@ -23,7 +23,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="fullscreen">
           <Navigation/>
           <Switch>
             <Route exact path="/" component={LoginPage} />

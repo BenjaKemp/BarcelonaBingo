@@ -11,13 +11,15 @@ export class Detail extends Component {
   render() {
     const word = this.props.location.state.word;
     const props = this.props;
+    console.log(word)
     return (
-      <Card >
+      <Card className="infoCard" >
           <CardMedia
           image={word.pic}
           title="Contemplative Reptile"
         />
           <h3>Details for:</h3>
+          <img className="pic" src={word.pic} />
           <div>{props.match.params.id}</div>
           <h5>{word.info}</h5>
           <h5>{props.info}</h5>

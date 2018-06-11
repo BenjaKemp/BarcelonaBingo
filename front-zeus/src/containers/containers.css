@@ -7,14 +7,7 @@
   display: flex;
   flex-flow: column;
 }
-.wrapper {
 
-    align-items: center;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: auto;
-  border: black;
-}
 #overlay {
   position: fixed;
   display: none;
@@ -43,30 +36,50 @@
   border-radius: 5px;
 }
 
-.button-bar {
-  display: flex;
+.infoCard {
+  height: 500px;
+  width: 700px;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+}
+.pic {
+height: 300px;
+width: 300px;
+border-radius: 50%;
+
+}
+.button-bar {
+  height: 64px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
 }
 .background {
-  background-image: url("http://barcelona.bigdataweek.com/wp-content/uploads/sites/5/2015/08/Slider-2560-x-1302-barcelona-v2.jpg") no-repeat center center fixed; ;
+  height: 100%;
+  background: url("http://barcelona.bigdataweek.com/wp-content/uploads/sites/5/2015/08/Slider-2560-x-1302-barcelona-v2.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.wrapper {
+  border-radius: 5px;
+  width: 900px;
+  /* position: absolute; */
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: auto;
+  border: black;
+  background-color: white;
 }
 .bingoBoard {
-
-  width: auto;
-    height: auto;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    margin-top: -200px;
-    margin-left: -250px;
-    border-radius: 5px;
-
+  flex:1;
 }
 .detail {
   height: 800px;
