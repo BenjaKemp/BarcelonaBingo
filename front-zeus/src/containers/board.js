@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { selectWord } from "../actions/index";
-import { Card } from "./card";
-import Navigation from "./navigation";
+import { SingleCard } from "./SingleCard";
+
 import "./containers.css";
 import { Link } from "react-router-dom";
 
@@ -18,7 +18,7 @@ class Board extends Component {
         <Link
           to={{ pathname: `/detail/${word.title}`, state: { index, word } }}
         >
-          <Card
+          <SingleCard
             key={index}
             title={word.title}
             info={word.info}
@@ -31,11 +31,12 @@ class Board extends Component {
   }
   render() {
     return (
+<div className="background">
+      <div className="bingoBoard shadow-drop-2-center">
 
-      <div className="bingoBoard">
-        <Navigation/>
-        <ul className="wrapper">{this.renderList()}</ul>
+        <div className="wrapper">{this.renderList()}</div>
       </div>
+    </div>
     );
   }
 }

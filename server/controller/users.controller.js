@@ -33,7 +33,9 @@ module.exports.create = async (ctx, next) => {
 module.exports.signIn = async (ctx, next) => {
   if ('GET' != ctx.method) return await next();
 
+
   const credentials = atob(ctx.headers.authorization.split(' ')[1]);
+  console.log(credentials);
   const userData = {
     playername: credentials.split(':')[0],
     password: credentials.split(':')[1]

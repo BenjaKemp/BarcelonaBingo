@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { connect } from "react-redux";
 import { setWords } from "./actions/index";
 import Board from "./containers/board";
 import Detail from "./containers/detail";
 import LoginPage from "./component/loginpage";
+import Navigation from "./containers/navigation";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -24,20 +24,14 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <ReactCSSTransitionGroup
-            transitionAppear={true}
-            transitionAppearTimeout={600}
-            transitionEnterTimeout={600}
-            transitionLeaveTimeout={200}
-            transitionName="SlideIn"
-          >
+          <Navigation/>
           <Switch>
             <Route exact path="/" component={LoginPage} />
             <Route path="/board" component={Board} />
 
             <Route path="/detail/:id" component={Detail} />
           </Switch>
-          </ReactCSSTransitionGroup>
+
         </div>
       </Router>
     );

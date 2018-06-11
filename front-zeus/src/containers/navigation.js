@@ -7,17 +7,7 @@ export default class Navigation extends Component {
 
     return (
       <div className="button-bar">
-        <button type="button" className="btn btn-primary">
-          Reset
-        </button>
-
-        <button type="button" className="btn btn-success">
-          Quit
-        </button>
-
-        <button type="button" className="btn btn-warning">
-          I'm sad about something
-        </button>
+    <div className="tracking-in-expand-fwd-top"><h1> Welcome To Bens Boozy Barcelona Bingo</h1></div> 
       </div>
     );
   }

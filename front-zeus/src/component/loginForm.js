@@ -4,12 +4,28 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
 import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
-import { Redirect } from "react-router-dom";
 import { password, username, newUser, logged } from "../actions/index";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+  withRouter
+} from "react-router-dom";
+
+const fakeAuth = {
+  isAuthenticated: false,
+  authenticate(cb) {
+    this.isAuthenticated = true;
+    setTimeout(cb, 100);
+  },
+  signout(cb) {
+    this.isAuthenticated = false;
+    setTimeout(cb, 100);
+  }
+};
 
 class Login extends Component {
-
-
   handleClick = input => {
     let user = [
       {
@@ -26,26 +42,31 @@ class Login extends Component {
         method: "GET",
         headers: {
           Authorization:
-            "Basic " + btoa(this.state.username + ":" + this.state.password)
+            "Basic " +
+            btoa(
+              this.props.credentials.username +
+                ":" +
+                this.props.credentials.password
+            )
         }
       }
     ];
 
-    if (this.state.newUser) {
+    if (this.props.credentials.newUser) {
       fetch(`http://localhost:3000/users`, user[0]).then(res => {
         if (res.status === 400) {
           alert("this username already exists!, you have to pick another ");
         } else if (res.status === 201) {
-          this.props.logged()
+          this.props.logged();
         }
       });
     } else {
       fetch(`http://localhost:3000/sign-in`, user[1]).then(res => {
         if (res.status === 401) {
           alert("your username and password was not recognised");
-        } else if (res.status === 201) {
-          console.log('you are good to go')
-          this.props.logged()
+        } else if (res.status === 200) {
+          console.log("you are good to go");
+          this.props.logged();
         }
       });
     }
@@ -57,24 +78,24 @@ class Login extends Component {
         <div>
           <MuiThemeProvider>
             <div>
-              <AppBar title={'log in'} />
+              <AppBar
+                title={this.props.credentials.newUser ? "Sign Up" : "Log In"}
+              />
               <TextField
                 hintText="Enter your Username"
                 floatingLabelText="Username"
-                onChange={(event, username) =>{
-                  this.props.username({username})
-                }
-                }
+                onChange={(event, username) => {
+                  this.props.username({ username });
+                }}
               />
               <br />
               <TextField
                 type="password"
                 hintText="Enter your Password"
                 floatingLabelText="Password"
-                onChange={(event, password) =>{
-                  this.props.password({password})
-                }
-                }
+                onChange={(event, password) => {
+                  this.props.password({ password });
+                }}
               />
               <br />
               <RaisedButton
@@ -84,12 +105,14 @@ class Login extends Component {
                 onClick={event => this.handleClick(event)}
               />
               <RaisedButton
-                label="New User?"
+                label={
+                  this.props.credentials.newUser
+                    ? "I Am Not New "
+                    : "I'm New Here"
+                }
                 primary={true}
                 style={style}
-                onClick={() =>
-                  this.props.newUser()
-                }
+                onClick={() => this.props.newUser()}
               />
             </div>
           </MuiThemeProvider>
@@ -106,15 +129,15 @@ const style = {
 
 function mapStateToProps(state) {
   return {
-credentials: state.credentials
+    credentials: state.credentials
   };
 }
 function mapDispatchToProps(dispatch) {
   return {
-    username: (value) => dispatch(username(value)),
-    password: (value) => dispatch(password(value)),
+    username: value => dispatch(username(value)),
+    password: value => dispatch(password(value)),
     newUser: () => dispatch(newUser()),
-    logged: () => dispatch(logged()),
+    logged: () => dispatch(logged())
   };
 }
 

@@ -21,7 +21,7 @@ export default function(state = initialState, action) {
       };
       case SET_WORDS:
       return {
-        ... state,
+        ...state,
         words: action.words,
       }
 
