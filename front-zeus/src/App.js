@@ -3,7 +3,6 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { connect } from "react-redux";
 import { setWords } from "./actions/index";
 import Board from "./containers/board";
-import Navigation from "./containers/navigation";
 import Detail from "./containers/detail";
 import LoginPage from "./component/loginpage";
 import "./App.css";
@@ -31,7 +30,7 @@ class App extends Component {
             transitionEnterTimeout={600}
             transitionLeaveTimeout={200}
             transitionName="SlideIn"
-          > 
+          >
           <Switch>
             <Route exact path="/" component={LoginPage} />
             <Route path="/board" component={Board} />

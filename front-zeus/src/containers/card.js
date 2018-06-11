@@ -6,7 +6,7 @@ export class Card extends Component {
   render() {
     let colour = (this.props.seen) ? "seen" : "card"
 
-    return <img className={colour} src={ this.props.pic } />;
+    return <img className={colour} src={ this.props.pic } alt="img.img"/>;
 
   }
 }

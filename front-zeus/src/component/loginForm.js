@@ -1,29 +1,22 @@
 import React, { Component } from "react";
-import { Panel, Form, FormGroup, FormControl, Button } from "react-bootstrap";
+import { connect } from "react-redux";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
 import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
 import { Redirect } from "react-router-dom";
+import { password, username, newUser, logged } from "../actions/index";
 
 class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: "",
-      password: "",
-      logged: false,
-      newUser: true
-    };
-  }
+
 
   handleClick = input => {
     let user = [
       {
         method: "POST",
         body: JSON.stringify({
-          playername: this.state.username,
-          password: this.state.password
+          playername: this.props.credentials.username,
+          password: this.props.credentials.password
         }),
         headers: {
           "Content-Type": "application/json"
@@ -40,29 +33,37 @@ class Login extends Component {
 
     if (this.state.newUser) {
       fetch(`http://localhost:3000/users`, user[0]).then(res => {
-        console.log("you have saved a person");
-        this.setState({ logged: true });
+        if (res.status === 400) {
+          alert("this username already exists!, you have to pick another ");
+        } else if (res.status === 201) {
+          this.props.logged()
+        }
       });
     } else {
       fetch(`http://localhost:3000/sign-in`, user[1]).then(res => {
-        console.log("you are signed in");
-        this.setState({ logged: true });
+        if (res.status === 401) {
+          alert("your username and password was not recognised");
+        } else if (res.status === 201) {
+          console.log('you are good to go')
+          this.props.logged()
+        }
       });
     }
   };
 
   render() {
-    if (!this.state.logged) {
+    if (!this.props.credentials.logged) {
       return (
         <div>
           <MuiThemeProvider>
             <div>
-              <AppBar title="Login" />
+              <AppBar title={'log in'} />
               <TextField
                 hintText="Enter your Username"
                 floatingLabelText="Username"
-                onChange={(event, newValue) =>
-                  this.setState({ username: newValue })
+                onChange={(event, username) =>{
+                  this.props.username({username})
+                }
                 }
               />
               <br />
@@ -70,8 +71,9 @@ class Login extends Component {
                 type="password"
                 hintText="Enter your Password"
                 floatingLabelText="Password"
-                onChange={(event, newValue) =>
-                  this.setState({ password: newValue })
+                onChange={(event, password) =>{
+                  this.props.password({password})
+                }
                 }
               />
               <br />
@@ -85,8 +87,8 @@ class Login extends Component {
                 label="New User?"
                 primary={true}
                 style={style}
-                onClick={event =>
-                  this.setState({ newUser: !this.state.newUser })
+                onClick={() =>
+                  this.props.newUser()
                 }
               />
             </div>
@@ -101,4 +103,19 @@ class Login extends Component {
 const style = {
   margin: 15
 };
-export default Login;
+
+function mapStateToProps(state) {
+  return {
+credentials: state.credentials
+  };
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    username: (value) => dispatch(username(value)),
+    password: (value) => dispatch(password(value)),
+    newUser: () => dispatch(newUser()),
+    logged: () => dispatch(logged()),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

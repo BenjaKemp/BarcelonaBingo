@@ -38,7 +38,6 @@ module.exports.signIn = async (ctx, next) => {
     playername: credentials.split(':')[0],
     password: credentials.split(':')[1]
   };
-  console.log(userData);
   let player = await players.findOne({playername:userData.playername});
   if (player) {
     const response = await  bcrypt.compare(userData.password, player.password);
@@ -57,5 +56,4 @@ module.exports.signIn = async (ctx, next) => {
       ]
     };
   }
-  ctx.status = 201;
 };

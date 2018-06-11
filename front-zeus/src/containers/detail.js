@@ -38,8 +38,6 @@ export class Detail extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log("this.props", this.props);
-  console.log("this is the state", state);
   return {
     word: state.selectedWord.selectedWord,
     sightSeen: state.sightSeen

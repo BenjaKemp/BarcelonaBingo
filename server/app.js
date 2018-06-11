@@ -5,7 +5,6 @@ const cors        = require("koa-cors");
 const router      = require("./routes/index");
 const myApi       = require("./API/index");
 const db          = require("./db");
-// const router = new Router();
 const app = new Koa();
 
 app

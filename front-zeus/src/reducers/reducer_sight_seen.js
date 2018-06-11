@@ -24,6 +24,8 @@ export default function(state = initialState, action) {
         ... state,
         words: action.words,
       }
+
+       default:
+      return state;
   }
-  return state;
 }
