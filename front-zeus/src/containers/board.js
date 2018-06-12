@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { selectWord } from "../actions/index";
+import { selectWord, victory } from "../actions/index";
 import { SingleCard } from "./SingleCard";
 
 import "./containers.css";
@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 class Board extends Component {
 
   renderList() {
+
     return this.props.words.map((word, index) => {
       return (
 

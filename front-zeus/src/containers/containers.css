@@ -1,3 +1,69 @@
+.victory {
+  top: 20%;
+  left:20%;
+  background-color: black;
+  position: relative;
+  font-family: 'Permanent Marker', cursive;
+  font-variant:small-caps;
+  font-size: 230px;
+  -webkit-transform: skew(-15deg,-15deg);
+  background-image: -webkit-linear-gradient(#FF0FF8 0%,  #F9F9F7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  -webkit-filter: drop-shadow(2px 2px 20px #f008b7);
+}
+.back-drop {
+  background-color: black;
+  height: 100vh;
+}
+
+.victory:before {
+  content: '-';
+  position: absolute;
+  bottom: -98px;
+  left: 254px;
+  background-image: -webkit-linear-gradient(#F3C8F3 0%, #F3C8F3 100%);
+  -webkit-background-clip: text;
+  text-shadow: 70px -7px #F3C8F3;
+}
+
+.victory:after {
+  content: '-';
+  position: absolute;
+  bottom: -85px;
+  left: 395px;
+  background-image: -webkit-linear-gradient(#F3C8F3 0%, #F3C8F3 100%);
+  -webkit-background-clip: text;
+  text-shadow: 70px -5px #F3C8F3;
+}
+
+.victory-v {
+  position: relative;
+  background-image: -webkit-linear-gradient(#FF0FF8 0%,  #F9F9F7 100%);
+  -webkit-background-clip: text;
+  padding-right: 18px;
+  margin-right: -18px;
+}
+
+.victory-v:before {
+  content: '-';
+  position: absolute;
+  top: -71px;
+  left: -71px;
+  background-image: -webkit-linear-gradient(#FF0FF8 0%,  #FC96FC 100%);
+  -webkit-background-clip: text;
+}
+
+.victory-v:after {
+  content: '-';
+  position: absolute;
+  top: -72px;
+  left: 103px;
+  background-image: -webkit-linear-gradient(#FF0FF8 0%,  #FC96FC 100%);
+  -webkit-background-clip: text;
+}
+
 .flex-container {
   display: flex;
   flex-direction: row;
@@ -27,6 +93,15 @@ img {
   width: 150px;
   border: 1px solid black;
   border-radius: 5px;
+}
+.seen-card {
+  margin: 15px;
+  text-align: center;
+  height: 150px;
+  width: 150px;
+  border: 1px solid black;
+  border-radius: 5px;
+  opacity: 0.2;
 }
 .inner-text {
   color: white;
@@ -58,10 +133,10 @@ font-weight: bold;
   background-color: gray;
 }
 .super-container {
+  background-image: url('https://www.wallpaperpimper.com/wallpapers/ikiix2/imac-21-retina-4k/barcelona.jpg');
   height: 100vh;
   display: flex;
   justify-content: center;
-  background-color: gray;
 
 }
 .buttons {
@@ -71,10 +146,14 @@ font-weight: bold;
 }
 
 .infoCard {
+  margin: auto;
+  border-radius: 5px;
   display: flex;
   height: 500px;
   width: 700px;
-  justify-content: space-between;
+  background-color: white;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.25));
+   box-shadow: 7px 7px 7px rgba(0,0,0,0.7);
   align-items: center;
   flex-flow: column;
 }
@@ -105,22 +184,23 @@ border-radius: 50%;
 .wrapper {
   border-radius: 5px;
   width: 900px;
-  /* position: absolute; */
   align-items: center;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: auto;
-  border: black;
+  border: 3px solid black;
   background-color: white;
 }
 .bingoBoard {
-  border: 2px solid black;
+
+  border: 10px solid black;
   flex:1;
 }
+
 .detail {
   height: 800px;
-
 }
+
 
 .inner-detail {
   position: absolute;
@@ -135,7 +215,6 @@ border-radius: 50%;
   border-radius: 5px;
 
 }
-.inner-detail {}
 
   .seen {
     background-color: black;

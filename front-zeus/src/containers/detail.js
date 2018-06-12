@@ -3,17 +3,16 @@ import React, { Component } from "react";
 import { sightSeen } from "../actions/index";
 import { Link } from "react-router-dom";
 import "./containers.css";
-import Card from "@material-ui/core/Card";
-import CardMedia from "@material-ui/core/CardMedia";
 
 export class Detail extends Component {
   render() {
     const word = this.props.location.state.word;
     const props = this.props;
+    console.log(this.props.history);
     return (
       <div className="super-container">
 
-      <Card className="infoCard">
+      <div className="infoCard">
         <h3>Details for: {word.title}</h3>
         <img className="pic" src={word.pic} />
         <h4>{word.info}</h4>
@@ -31,7 +30,7 @@ export class Detail extends Component {
           <button class="btn btn-danger"> Nope</button>
         </Link>
         </div>
-      </Card>
+      </div>
     </div>
     );
   }

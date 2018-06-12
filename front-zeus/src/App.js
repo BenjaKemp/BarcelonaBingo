@@ -4,9 +4,11 @@ import { setWords } from "./actions/index";
 import Board from "./containers/board";
 import Detail from "./containers/detail";
 import LoginPage from "./component/loginpage";
-import Navigation from "./containers/navigation";
+import Navigation from "./containers/navigation"
 import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Router from 'react-router-dom/BrowserRouter';
+import Route from 'react-router-dom/Route';
+import { Switch } from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
@@ -23,21 +25,24 @@ class App extends Component {
   render() {
     return (
       <Router>
+
         <div className="fullscreen">
+          {/* <Navigation/> */}
           <Switch>
             <Route exact path="/" component={LoginPage} />
             <Route path="/board" component={Board} />
-
+            <Route path="/Navigation" component={Navigation} />
             <Route path="/detail/:id" component={Detail} />
           </Switch>
 
         </div>
-      </Router>
+    </Router>
     );
   }
 }
 function mapStateToProps(state) {
   return {
+
     view: state.sightSeen
   };
 }

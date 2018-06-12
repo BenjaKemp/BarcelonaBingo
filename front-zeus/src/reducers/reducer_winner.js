@@ -1,5 +1,6 @@
-const winnerIndex = [];
 
+
+const winnerIndex = [];
 export const findWinner = index => {
   winnerIndex.push(index);
 
@@ -22,7 +23,7 @@ export const findWinner = index => {
       });
       if (answer && winnerIndex.length >= 5) {
         console.log("you win");
-        // alert('YOU JUST WON THE FUCKING GAME');
+        document.location.href="/Navigation";
       }
     });
   }

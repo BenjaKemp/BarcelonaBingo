@@ -1,4 +1,4 @@
-import {SELECT_WORD, SIGHT_SEEN, SET_WORDS, USER_NAME, PASSWORD, NEW_USER, LOGGED } from "../constants/action-types";
+import {SELECT_WORD, SIGHT_SEEN, SET_WORDS, USER_NAME, PASSWORD, NEW_USER, LOGGED, VICTORY } from "../constants/action-types";
 
 
 export function selectWord (word, index){
@@ -51,6 +51,14 @@ export function logged (value){
   return {
     type: LOGGED,
   value
+
+  }
+}
+export function victory (){
+  // console.log(value)
+  return {
+    type: VICTORY,
+
 
   }
 }
