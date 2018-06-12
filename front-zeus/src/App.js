@@ -24,7 +24,7 @@ class App extends Component {
     return (
       <Router>
         <div className="fullscreen">
-          <Navigation/>
+          {/* <Navigation/> */}
           <Switch>
             <Route exact path="/" component={LoginPage} />
             <Route path="/board" component={Board} />

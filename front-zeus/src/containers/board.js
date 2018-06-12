@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 
 class Board extends Component {
 
-
   renderList() {
     return this.props.words.map((word, index) => {
       return (
