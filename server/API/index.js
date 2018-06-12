@@ -109,7 +109,7 @@ const manMadeApi = [
   {
     "title": "La Sagrada Familia",
     "pic":
-      "https://www.globotreks.com/wp-content/uploads/2011/02/Sagrada-Familia.jpg",
+      "https://static.vix.com/es/sites/default/files/styles/large/public/s/sagrada-familia1.jpg?itok=lGQ0GACC",
     "seen": false,
     "info":
       "This church has been in construction since 1892, and it’s not expected to be finished until 2030.  The church presents an excellent depiction of the relationship between man, nature, and religion through its architecture and façade sculptures."
@@ -125,7 +125,7 @@ const manMadeApi = [
   {
     "title": "Museu Nacional d'Art de Catalunya",
     "pic":
-      "http://cdn.touropia.com/gfx/d/tourist-attractions-in-barcelona/museu_nacional_dart_de_catalunya.jpg?v=c96859cf4320af8e276c959b87e0d2a3",
+      "https://i2.wp.com/hisour.com/wp-content/uploads/2017/03/Museu-Nacional-dArt-de-Catalunya.jpg?fit=1078%2C640&ssl=1",
     "seen": false,
     "info":
       "Sitting atop a hill, the Museu Nacional d’Art de Catalunya looks more like a massive castle than an art museum, a museum that holds a king’s ransom in treasures. It is here, however, that visitors will find the greatest Catalan art from the 10th century to the 20th century"

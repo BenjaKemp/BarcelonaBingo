@@ -57,7 +57,13 @@ font-weight: bold;
   transition: .5s ease;
   background-color: gray;
 }
+.super-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: gray;
 
+}
 
 .infoCard {
   height: 500px;
@@ -73,9 +79,7 @@ border-radius: 50%;
 }
 .button-bar {
   height: 64px;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
+
 }
 .background {
   box-shadow: 10px 10px 5px grey;

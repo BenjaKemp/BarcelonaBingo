@@ -3,42 +3,37 @@ import React, { Component } from "react";
 import { sightSeen } from "../actions/index";
 import { Link } from "react-router-dom";
 import "./containers.css";
-import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
-
+import Card from "@material-ui/core/Card";
+import CardMedia from "@material-ui/core/CardMedia";
 
 export class Detail extends Component {
   render() {
     const word = this.props.location.state.word;
     const props = this.props;
     return (
-      <Card className="infoCard" >
+      <div className="super-container">
 
-          <h3>Details for: {word.title}</h3>
-          <img className="pic" src={word.pic} />
-          <h4>{word.info}</h4>
-          <div />
-          <button size="small" color="primary">
-            <Link
-              to="/board"
-              onClick={() => {
-                props.sightSeen(
-                  props.match.params.id,
-                  props.location.state.index
-                );
-              }}
-            >
-              yes
-            </Link>
-          </button>
-          <button size="small" color="primary">
-            <Link to="/Board">no</Link>
-          </button>
+      <Card className="infoCard">
+        <h3>Details for: {word.title}</h3>
+        <img className="pic" src={word.pic} />
+        <h4>{word.info}</h4>
+        <div />
+        <Link
+          to="/board"
+          onClick={() => {
+            props.sightSeen(props.match.params.id, props.location.state.index);
+          }}
+        >
+          <button class="btn btn-success">Yup</button>
+        </Link>
+        <Link to="/Board">
+          <button class="btn btn-danger"> Nope</button>
+        </Link>
       </Card>
+    </div> 
     );
   }
 }
-
 
 function mapStateToProps(state) {
   return {

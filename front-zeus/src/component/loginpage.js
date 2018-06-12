@@ -8,7 +8,9 @@ class LoginPage extends Component {
     return (
 
       <div className="LoginPage">
-        <div className="tracking-in-expand-fwd-top"><h1> Welcome To Bens Boozy Barcelona Bingo</h1></div> 
+        <h3 class="future">Barcelona</h3>
+        <h1 class="cop">Bingo</h1>
+      <br/>
         <LoginForm />
       </div>
 
