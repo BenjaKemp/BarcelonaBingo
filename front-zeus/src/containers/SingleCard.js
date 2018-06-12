@@ -12,9 +12,7 @@ export class SingleCard extends Component {
         </div>
       </div>
     );
-    // return <div className="card shadow-drop-2-center">
-    //   <a href={ this.props.pic } alt="img.img"></a>
-    //       </div>
+
   }
 }
 function mapDispatchToProps(dispatch) {}

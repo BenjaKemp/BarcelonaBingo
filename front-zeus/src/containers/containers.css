@@ -64,12 +64,19 @@ font-weight: bold;
   background-color: gray;
 
 }
+.buttons {
+  flex-direction: row;
+  justify-content: space-around;
+
+}
 
 .infoCard {
+  display: flex;
   height: 500px;
   width: 700px;
   justify-content: space-between;
   align-items: center;
+  flex-flow: column;
 }
 .pic {
 height: 300px;

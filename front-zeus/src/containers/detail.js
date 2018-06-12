@@ -18,6 +18,7 @@ export class Detail extends Component {
         <img className="pic" src={word.pic} />
         <h4>{word.info}</h4>
         <div />
+        <div className="buttons">
         <Link
           to="/board"
           onClick={() => {
@@ -29,8 +30,9 @@ export class Detail extends Component {
         <Link to="/Board">
           <button class="btn btn-danger"> Nope</button>
         </Link>
+        </div>
       </Card>
-    </div> 
+    </div>
     );
   }
 }
