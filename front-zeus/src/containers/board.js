@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { selectWord, victory } from "../actions/index";
+import { selectWord } from "../actions/index";
 import { SingleCard } from "./SingleCard";
 
 import "./containers.css";
@@ -9,17 +9,17 @@ import { Link } from "react-router-dom";
 
 class Board extends Component {
 
+
+
+
   renderList() {
 
-    return this.props.words.map((word, index) => {
+    return this.props.words.map((word, key) => {
       return (
+        <Link  to={{ pathname: `/detail/${word.title}`, state: { key, word } }}>
 
-
-        <Link
-          to={{ pathname: `/detail/${word.title}`, state: { index, word } }}
-        >
           <SingleCard
-            key={index}
+            index={key}
             title={word.title}
             info={word.info}
             pic={word.pic}

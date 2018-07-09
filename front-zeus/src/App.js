@@ -10,9 +10,15 @@ import Router from 'react-router-dom/BrowserRouter';
 import Route from 'react-router-dom/Route';
 import { Switch } from "react-router-dom";
 
+
+
 class App extends Component {
   constructor(props) {
     super(props);
+
+
+
+
   const getAll = () => { fetch("http://localhost:3000/getall")
       .then(res => res.json())
       .then(words => {
