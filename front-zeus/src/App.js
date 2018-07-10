@@ -27,7 +27,7 @@ console.log('this is log' ,props.log)
       })
       .catch(e => console.log(e));
     }
-    if (!props.log){
+    if (props.log){
     getAll();
   }
   }
