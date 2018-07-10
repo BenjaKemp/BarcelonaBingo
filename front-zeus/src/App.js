@@ -17,16 +17,19 @@ class App extends Component {
     super(props);
 
 
+console.log('this is log' ,props.log)
 
-
-  const getAll = () => { fetch("http://localhost:3000/getall")
+  const getAll = () => {
+    fetch("http://localhost:3000/getall")
       .then(res => res.json())
       .then(words => {
         this.props.setWords(words);
       })
       .catch(e => console.log(e));
     }
+    if (!props.log){
     getAll();
+  }
   }
   render() {
     return (
@@ -48,7 +51,7 @@ class App extends Component {
 }
 function mapStateToProps(state) {
   return {
-
+    log: state.credentials.logged,
     view: state.sightSeen
   };
 }
