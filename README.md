@@ -2,8 +2,8 @@ Barcelona Bingo is a live action bingo game for playing in, unsurprisingly, Barc
 
 Getting Started
 Clone the repo
-git clone https://github.com/YourParmenides/chat-front
-cd buddychat
+git clone https://github.com/BenjaKemp/ProjectZeus.git
+cd ProjectZeus
 Install dependencies
 npm install
 Start development server
