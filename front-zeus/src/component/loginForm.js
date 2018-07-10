@@ -13,7 +13,7 @@ import {
 
 class Login extends Component {
   handleClick = input => {
-    let user = [
+    let options = [
       {
         method: "POST",
         body: JSON.stringify({
@@ -39,15 +39,20 @@ class Login extends Component {
     ];
 
     if (this.props.credentials.newUser) {
-      fetch(`http://localhost:3000/users`, user[0]).then(res => {
+      fetch(`http://localhost:3000/users`, options[0])
+      .then(res=> {
         if (res.status === 400) {
           alert("this username already exists!, you have to pick another ");
         } else if (res.status === 201) {
-          this.props.logged();
-        }
+          return res.json();
+        }})
+      .then(res => {
+        console.log('this is response' ,res)
+        localStorage.setItem('webToken', res.token);
+        this.props.logged();
       });
     } else {
-      fetch(`http://localhost:3000/sign-in`, user[1]).then(res => {
+      fetch(`http://localhost:3000/sign-in`, options[1]).then(res => {
         if (res.status === 401) {
           alert("your username and password was not recognised");
         } else if (res.status === 200) {

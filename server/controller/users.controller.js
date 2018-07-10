@@ -25,7 +25,8 @@ module.exports.create = async (ctx, next) => {
     playerData.token = uuidv4();
     player = await filterProps(playerData, ['playername', 'password', 'token']);
     await players.insert(player);
-    ctx.body = player;
+    console.log(player)
+    ctx.body = {token: player.token, playername: player.playername};
     ctx.status = 201;
     console.log(`player ${playerData.playername} has been added`);
   }
