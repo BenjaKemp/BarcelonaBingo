@@ -16,7 +16,7 @@ const windex = [
 ];
 export const findWinner = index => {
   winnerIndex.push(index);
-
+localStorage.setItem('winnerIndex', JSON.stringify(winnerIndex))
   for (let i = 0; i < winnerIndex.length; i++) {
     windex.forEach(array => {
       let answer = array.every(el => {

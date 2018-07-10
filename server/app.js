@@ -8,7 +8,7 @@ const db          = require("./db");
 const app = new Koa();
 
 app
-  .use(cors({origin: 'http://localhost:3001'}))
+  .use(cors())
   .use(bodyparser())
   // .use(token)
   .use(router.routes())
