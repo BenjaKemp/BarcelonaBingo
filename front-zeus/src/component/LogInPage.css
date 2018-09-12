@@ -194,6 +194,13 @@
 	-webkit-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 2.5s both;
 	        animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 2.5s both;
 }
+.log-in-container {
+	padding: 5px;
+margin: 5px;
+border-radius: 5px;
+	background-color: white;
+	opacity:.9;
+}
 
 .LoginPage {
     background-image: url('https://images2.alphacoders.com/866/866544.jpg');

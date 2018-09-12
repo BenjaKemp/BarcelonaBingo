@@ -11,7 +11,9 @@ class LoginPage extends Component {
         <h3 className="future">Barcelona</h3>
         <h1 className="cop">Bingo</h1>
       <br/>
+      <div className="log-in-container">
         <LoginForm />
+        </div>
       </div>
 
     );

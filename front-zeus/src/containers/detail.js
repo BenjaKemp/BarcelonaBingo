@@ -5,10 +5,15 @@ import { Link } from "react-router-dom";
 import "./containers.css";
 
 export class Detail extends Component {
+
+
+
   render() {
     const word = this.props.location.state.word;
     const props = this.props;
+
     return (
+
       <div className="super-container">
         <div className="infoCard">
           <h3>Details for: {word.title}</h3>
@@ -45,7 +50,8 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
   return {
-    sightSeen: (value, index) => dispatch(sightSeen(value, index))
+    sightSeen: (value, index) => dispatch(sightSeen(value, index)),
+
   };
 }
 

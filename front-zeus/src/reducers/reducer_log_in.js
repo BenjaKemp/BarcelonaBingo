@@ -1,11 +1,12 @@
-import { USER_NAME, PASSWORD, NEW_USER, LOGGED } from "../constants/action-types";
+import { USER_NAME, PASSWORD, NEW_USER, LOGGED, VICTORY } from "../constants/action-types";
 
 export const logIn = {
   username: "",
   password: "",
   logged: false,
   newUser: true,
-  
+  victory: false
+
 };
 export default function(state = logIn, action) {
   switch (action.type) {
@@ -28,6 +29,11 @@ export default function(state = logIn, action) {
       return {
         ...state ,
         logged: (!state.logged)
+      }
+    case VICTORY:
+      return {
+        ...state ,
+        victory: (!state.victory)
       }
       default:
       return state;

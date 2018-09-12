@@ -6,24 +6,37 @@ import Navigation from "./containers/navigation";
 import Detail from "./containers/detail";
 import LoginPage from "./component/loginpage";
 import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Router from 'react-router-dom/BrowserRouter';
+import Route from 'react-router-dom/Route';
+import { Switch } from "react-router-dom";
+
+
 
 class App extends Component {
   constructor(props) {
     super(props);
-  const getAll = () => { fetch("http://localhost:3000/getall")
+
+
+console.log('this is log' ,props.log)
+
+  const getAll = () => {
+    fetch("http://localhost:3000/getall")
       .then(res => res.json())
       .then(words => {
         this.props.setWords(words);
       })
       .catch(e => console.log(e));
     }
+    if (props.log){
     getAll();
+  }
   }
   render() {
     return (
       <Router>
+
         <div className="fullscreen">
+          {/* <Navigation/> */}
           <Switch>
             <Route exact path="/" component={LoginPage} />
             <Route path="/board" component={Board} />
@@ -33,12 +46,13 @@ class App extends Component {
           </Switch>
 
         </div>
-      </Router>
+    </Router>
     );
   }
 }
 function mapStateToProps(state) {
   return {
+    log: state.credentials.logged,
     view: state.sightSeen
   };
 }

@@ -167,10 +167,10 @@ const manMadeApi = [
     "info": "The local tipple - the first three don't count"
   },
   {
-    "title": "The JOKER",
-    "pic": "https://pre00.deviantart.net/f0e6/th/pre/i/2014/155/0/6/wild_joker_card_by_mr_heath90-d7kzi0w.jpg",
-    "seen": true,
-    "info": "this can be anything you want - you lucky, lucky bastard"
+    "title": "Yellow Ribbon",
+    "pic": "https://pbs.twimg.com/media/DX3khAnX4AA-oI-.jpg",
+    "seen": false,
+    "info": "In Catalonia, yellow ribbons began to be used in late October 2017 by the Catalan independence movement as a symbol of solidarity with the leaders of two secessionist organizations, ANC and Òmnium Cultural, (Jordi Cuixart and Jordi Sànchez)."
   },
   {
     "title": "The Sea",
