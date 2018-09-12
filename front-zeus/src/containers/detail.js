@@ -3,8 +3,6 @@ import React, { Component } from "react";
 import { sightSeen } from "../actions/index";
 import { Link } from "react-router-dom";
 import "./containers.css";
-import Card from "@material-ui/core/Card";
-import CardMedia from "@material-ui/core/CardMedia";
 
 export class Detail extends Component {
   render() {
@@ -12,32 +10,36 @@ export class Detail extends Component {
     const props = this.props;
     return (
       <div className="super-container">
-
-      <Card className="infoCard">
-        <h3>Details for: {word.title}</h3>
-        <img className="pic" src={word.pic} />
-        <h4>{word.info}</h4>
-        <div />
-        <Link
-          to="/board"
-          onClick={() => {
-            props.sightSeen(props.match.params.id, props.location.state.index);
-          }}
-        >
-          <button class="btn btn-success">Yup</button>
-        </Link>
-        <Link to="/Board">
-          <button class="btn btn-danger"> Nope</button>
-        </Link>
-      </Card>
-    </div> 
+        <div className="infoCard">
+          <h3>Details for: {word.title}</h3>
+          <img className="pic" src={word.pic} />
+          <h4>{word.info}</h4>
+          <div />
+          <div className="buttons">
+            <Link
+              to="/board"
+              onClick={() => {
+                props.sightSeen(
+                  props.match.params.id,
+                  props.location.state.index
+                );
+              }}
+            >
+              <button className="btn btn-success">Yup</button>
+            </Link>
+            <Link to="/Board">
+              <button className="btn btn-danger"> Nope</button>
+            </Link>
+          </div>
+        </div>
+      </div>
     );
   }
 }
 
 function mapStateToProps(state) {
   return {
-    word: state.selectedWord.selectedWord,
+    word: state.selectedWord,
     sightSeen: state.sightSeen
   };
 }
@@ -47,4 +49,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Detail);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Detail);

@@ -8,8 +8,8 @@ class LoginPage extends Component {
     return (
 
       <div className="LoginPage">
-        <h3 class="future">Barcelona</h3>
-        <h1 class="cop">Bingo</h1>
+        <h3 className="future">Barcelona</h3>
+        <h1 className="cop">Bingo</h1>
       <br/>
         <LoginForm />
       </div>

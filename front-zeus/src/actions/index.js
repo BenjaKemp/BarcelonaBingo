@@ -1,7 +1,7 @@
 import {SELECT_WORD, SIGHT_SEEN, SET_WORDS, USER_NAME, PASSWORD, NEW_USER, LOGGED } from "../constants/action-types";
 
 
-export function selectWord (word, index){
+export const selectWord = (word, index) => {
   return {
     type: SELECT_WORD,
     word,
@@ -9,6 +9,7 @@ export function selectWord (word, index){
   };
 }
 export function sightSeen (value, index){
+  console.log('hi ben', value , index)
   return {
     type: SIGHT_SEEN,
     value,

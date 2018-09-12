@@ -2,12 +2,16 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { selectWord } from "../actions/index";
 import { SingleCard } from "./SingleCard";
-
+import CardModal from './CardModal'
 import "./containers.css";
 import { Link } from "react-router-dom";
 
 
 class Board extends Component {
+
+  state = {
+    selectedOption: undefined
+  }
 
   renderList() {
     return this.props.words.map((word, index) => {
@@ -15,14 +19,12 @@ class Board extends Component {
 
 
         <Link
-          to={{ pathname: `/detail/${word.title}`, state: { index, word } }}
+          to={{ pathname: `/detail/${word.title}`, state: { index, word } }} key={index}
         >
           <SingleCard
+
             key={index}
-            title={word.title}
-            info={word.info}
-            pic={word.pic}
-            seen={word.seen}
+          {...word}
           />
         </Link>
       );
@@ -40,6 +42,7 @@ class Board extends Component {
 }
 
 function mapStateToProps(state) {
+  console.log(state)
   return {
     words: state.sightSeen.words
   };
@@ -51,3 +54,9 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Board);
+
+
+
+// <CardModal
+//   selectedOption={this.state.selectedOption}
+//   handleClearSelectedOption={this.handleClearSelectedOption}/>

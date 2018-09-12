@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setWords } from "./actions/index";
 import Board from "./containers/board";
+import Navigation from "./containers/navigation";
 import Detail from "./containers/detail";
 import LoginPage from "./component/loginpage";
-import Navigation from "./containers/navigation";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -27,6 +27,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={LoginPage} />
             <Route path="/board" component={Board} />
+            <Route path="/Navigation" component={Navigation} />
 
             <Route path="/detail/:id" component={Detail} />
           </Switch>
