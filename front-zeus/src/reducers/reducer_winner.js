@@ -1,4 +1,3 @@
-import {victory} from  '../sockets'
 
 
 const winnerIndex = [];
@@ -23,7 +22,6 @@ localStorage.setItem('winnerIndex', JSON.stringify(winnerIndex))
         return winnerIndex.includes(el);
       });
       if (answer && winnerIndex.length >= 5) {
-        victory();
         document.location.href="/Navigation";
         return;
       }

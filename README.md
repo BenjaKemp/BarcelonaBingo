@@ -1,6 +1,10 @@
 
 <p align="center">
+<<<<<<< HEAD
   <img src="<a href="https://imgur.com/Yaut7ZQ"><img src="https://i.imgur.com/Yaut7ZQ.png" title="source: imgur.com" /></a>" size='1'/>
+=======
+  <img src="https://imgur.com/2IEQqgi.png" size='1'/>
+>>>>>>> a2398b1dbe50a6f46584d28343e129fe72209efa
 </p>
 
 

@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { selectWord } from "../actions/index";
 import { SingleCard } from "./SingleCard";
+<<<<<<< HEAD
+=======
+import CardModal from './CardModal'
+>>>>>>> a2398b1dbe50a6f46584d28343e129fe72209efa
 import "./containers.css";
 import { Link } from "react-router-dom";
 
@@ -11,11 +15,14 @@ class Board extends Component {
   state = {
     selectedOption: undefined
   }
+<<<<<<< HEAD
   handleClearSelectedOption = () => {
   this.setState(()=>({
     selectedOption: undefined
   }))
 }
+=======
+>>>>>>> a2398b1dbe50a6f46584d28343e129fe72209efa
 
   renderList() {
     return this.props.words.map((word, index) => {
@@ -59,3 +66,9 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Board);
+
+
+
+// <CardModal
+//   selectedOption={this.state.selectedOption}
+//   handleClearSelectedOption={this.handleClearSelectedOption}/>

@@ -6,7 +6,10 @@ import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
 import { password, username, newUser, logged } from "../actions/index";
 import {
+
+
   Redirect
+
 } from "react-router-dom";
 
 

@@ -2,6 +2,7 @@ const Koa         = require("koa");
 const bodyparser  = require("koa-bodyparser");
 const cors        = require("koa-cors");
 // const token       = require('./middlewares/token');
+const authorization = require('./middlewares/authorization');
 const router      = require("./routes/index");
 const myApi       = require("./API/index");
 const db          = require("./db");
@@ -11,6 +12,7 @@ app
   .use(cors())
   .use(bodyparser())
   // .use(token)
+  //.use(authorization)
   .use(router.routes())
   .use(router.allowedMethods());
   const server      = require("http").createServer(app.callback())
@@ -43,4 +45,6 @@ app.use(async ctx => {
   console.log("listening on port 3000");
 });
 
-server.listen(3000);
+server.listen(3000, () => {
+  console.log("listening on port 3000");
+});

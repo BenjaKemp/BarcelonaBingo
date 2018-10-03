@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setWords, reset } from "./actions/index";
 import Board from "./containers/board";
+import Navigation from "./containers/navigation";
 import Detail from "./containers/detail";
 import LoginPage from "./component/loginpage";
-import Navigation from "./containers/navigation"
 import "./App.css";
 import Router from 'react-router-dom/BrowserRouter';
 import Route from 'react-router-dom/Route';
@@ -42,6 +42,7 @@ class App extends Component {
             <Route exact path="/" component={LoginPage} />
             <Route path="/board" component={Board} />
             <Route path="/Navigation" component={Navigation} />
+
             <Route path="/detail/:id" component={Detail} />
           </Switch>
 

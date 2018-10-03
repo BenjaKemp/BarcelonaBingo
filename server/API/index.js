@@ -41,7 +41,7 @@ const manMadeApi = [
     "pic":
       "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Estelada_blava.svg/1200px-Estelada_blava.svg.png",
     "seen": false,
-    "info": "none of my business"
+    "info": "The Catalan independence movement (Catalan: independentisme català;[a] Spanish: independentismo catalán) is a political movement historically derived from Catalan nationalism, which seeks independence of Catalonia from Spain. The Estelada flag, which has a 'blue' and a 'red' version, has become its main symbol"
   },
   {
     "title": "Lovely Arse Volleyball",
@@ -179,4 +179,5 @@ const manMadeApi = [
     "info": "You should probably go for a swim, whilst you're here"
   }
 ];
-module.export = manMadeApi
+
+module.exports = manMadeApi;
