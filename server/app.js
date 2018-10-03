@@ -21,14 +21,12 @@ const clients = [];
 
 io.on('connection', (socket) => {
 
-
     socket.emit( 'tester' ,{
       description: 'we have received your connection'
     })
 
 
   socket.on('score', (data)=> {
-    console.log(data)
   })
   socket.on('victory', ()=> {
     console.log('the game is over' )

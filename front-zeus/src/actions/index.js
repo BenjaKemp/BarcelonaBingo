@@ -1,8 +1,7 @@
-import {SELECT_WORD, SIGHT_SEEN, SET_WORDS, USER_NAME, PASSWORD, NEW_USER, LOGGED, VICTORY } from "../constants/action-types";
+import {SELECT_WORD, SIGHT_SEEN, SET_WORDS, USER_NAME, PASSWORD, NEW_USER, LOGGED, VICTORY, RESET } from "../constants/action-types";
 
 
 export function selectWord (word, index){
-  console.log('here in selectWord' , word, 'word', index, 'index')
 
   return {
     type: SELECT_WORD,
@@ -12,7 +11,6 @@ export function selectWord (word, index){
 }
 export function sightSeen (value, index){
 
-  console.log('here in sight seen!!' , value, 'word', index, 'index')
   return {
     type: SIGHT_SEEN,
     value,
@@ -51,5 +49,11 @@ export function logged (value){
   return {
     type: LOGGED,
   value
+  }
+}
+export function reset (value){
+  return {
+    type: RESET,
+
   }
 }

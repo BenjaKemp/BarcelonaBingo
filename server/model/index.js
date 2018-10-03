@@ -6,7 +6,7 @@ const picObject =  mongoose.Schema({
   seen: Boolean,
   info: String
 });
-const PicObjects = mongoose.model("zeus", picObject);
+const PicObjects = mongoose.model("bingoCards", picObject);
 
 
 

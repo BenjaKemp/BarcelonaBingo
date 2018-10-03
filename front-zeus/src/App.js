@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { setWords } from "./actions/index";
+import { setWords, reset } from "./actions/index";
 import Board from "./containers/board";
 import Detail from "./containers/detail";
 import LoginPage from "./component/loginpage";
@@ -8,7 +8,7 @@ import Navigation from "./containers/navigation"
 import "./App.css";
 import Router from 'react-router-dom/BrowserRouter';
 import Route from 'react-router-dom/Route';
-import { Switch } from "react-router-dom";
+import { Switch, Link } from "react-router-dom";
 
 
 
@@ -17,17 +17,17 @@ class App extends Component {
     super(props);
 
 
-console.log('this is log' ,props.log)
 
   const getAll = () => {
     fetch("http://localhost:3000/getall")
       .then(res => res.json())
       .then(words => {
+        console.log('words')
         this.props.setWords(words);
       })
       .catch(e => console.log(e));
     }
-    if (props.log){
+    if (!props.log){
     getAll();
   }
   }
@@ -36,7 +36,8 @@ console.log('this is log' ,props.log)
       <Router>
 
         <div className="fullscreen">
-          {/* <Navigation/> */}
+          <button  onClick={()=>{localStorage.clear(); this.props.reset('resetting')}}>
+            <Link  to="/" />reset</button>
           <Switch>
             <Route exact path="/" component={LoginPage} />
             <Route path="/board" component={Board} />
@@ -57,7 +58,8 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
   return {
-    setWords: word => dispatch(setWords(word))
+    setWords: word => dispatch(setWords(word)),
+    reset: ()=> dispatch(reset())
   };
 }
 

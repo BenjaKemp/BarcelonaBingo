@@ -19,8 +19,9 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 let store = createStore(persistedReducer)
-let persistor = persistStore(store)
-console.log(store)
+ let persistor = persistStore(store)
+
+
 ReactDOM.render(<Provider store={store}>
                     <PersistGate loading={null} persistor={persistor}>
                       <App />
