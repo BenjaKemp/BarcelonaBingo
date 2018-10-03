@@ -22,6 +22,9 @@ let store = createStore(persistedReducer)
  let persistor = persistStore(store)
 
 
+store.subscribe(()=>{
+})
+
 ReactDOM.render(<Provider store={store}>
                     <PersistGate loading={null} persistor={persistor}>
                       <App />

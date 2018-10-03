@@ -27,6 +27,10 @@ io.on('connection', (socket) => {
 
 
   socket.on('score', (data)=> {
+
+  console.log('data firing from score', data)
+io.emit('opponentScored', {description: data});
+
   })
   socket.on('victory', ()=> {
     console.log('the game is over' )

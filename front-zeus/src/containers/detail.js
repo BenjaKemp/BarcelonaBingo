@@ -9,7 +9,6 @@ export class Detail extends Component {
   render() {
     const word = this.props.location.state.word;
     const props = this.props;
-    console.log("word", word);
     return (
       <div className="super-container">
         <div className="infoCard">

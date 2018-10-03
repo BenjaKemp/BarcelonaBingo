@@ -17,10 +17,8 @@ const shuffle = array => {
   return array;
 };
 
-console.log('PicObjects' , PicObjects)
 
 const getAll = async ctx => {
-  console.log('search is happening')
   const boardArray = await PicObjects.find((err, pics) => {
     if (err) return console.log("error in db");
   });

@@ -12,7 +12,6 @@ class Board extends Component {
     selectedOption: undefined
   }
   handleClearSelectedOption = () => {
-  console.log('here here here')
   this.setState(()=>({
     selectedOption: undefined
   }))

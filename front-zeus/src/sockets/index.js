@@ -1,8 +1,9 @@
 import io from 'socket.io-client';
 const socket = io('http://localhost:3000/');
 
-socket.on('tester', (data) => {
-  console.log(data.description)
+socket.on('opponentScored', (data) => {
+  let opponentPoint = data.description.sight
+  alert(`Look out! a rival has just seen ${opponentPoint}`)
 } );
 
 export function score (seen) {
