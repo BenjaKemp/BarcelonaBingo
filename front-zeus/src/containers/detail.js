@@ -3,10 +3,8 @@ import React, { Component } from "react";
 import { sightSeen } from "../actions/index";
 import { Link } from "react-router-dom";
 import "./containers.css";
-<<<<<<< HEAD
 import { score } from "../sockets/index.js";
-=======
->>>>>>> a2398b1dbe50a6f46584d28343e129fe72209efa
+
 
 export class Detail extends Component {
   render() {
@@ -25,14 +23,9 @@ export class Detail extends Component {
               onClick={() => {
                 props.sightSeen(
                   props.match.params.id,
-<<<<<<< HEAD
                   props.location.state.key
                 );
                 score(word.title);
-=======
-                  props.location.state.index
-                );
->>>>>>> a2398b1dbe50a6f46584d28343e129fe72209efa
               }}
             >
               <button className="btn btn-success">Yup</button>
