@@ -6,3 +6,5 @@ export const PASSWORD= "PASSWORD";
 export const NEW_USER= "NEW_USER";
 export const LOGGED= "LOGGED";
 export const VICTORY= "VICTORY";
+export const SCORE= "SCORE";
+export const RESET="RESET"

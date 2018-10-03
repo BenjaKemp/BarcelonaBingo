@@ -8,7 +8,7 @@ const db          = require("./db");
 const app = new Koa();
 
 app
-  .use(cors({origin: 'http://localhost:3001'}))
+  .use(cors())
   .use(bodyparser())
   // .use(token)
   .use(router.routes())
@@ -19,16 +19,28 @@ app
 
 const clients = [];
 
-io.on("connection", client => {
-  clients.forEach(client => client.emit("user_connected"));
-  clients.push(client);
-  client.on("bingo_card_seen", () => {});
-  console.log("a user connected");
-});
+io.on('connection', (socket) => {
+
+    socket.emit( 'tester' ,{
+      description: 'we have received your connection'
+    })
+
+
+  socket.on('score', (data)=> {
+
+  console.log('data firing from score', data)
+io.emit('opponentScored', {description: data});
+
+  })
+  socket.on('victory', ()=> {
+    console.log('the game is over' )
+
+  })
+})
+
 
 app.use(async ctx => {
   console.log("listening on port 3000");
-  console.log(clients);
 });
 
 server.listen(3000);

@@ -1,29 +1,34 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { selectWord, victory } from "../actions/index";
+import { selectWord } from "../actions/index";
 import { SingleCard } from "./SingleCard";
-
 import "./containers.css";
 import { Link } from "react-router-dom";
 
 
 class Board extends Component {
 
-  renderList() {
+  state = {
+    selectedOption: undefined
+  }
+  handleClearSelectedOption = () => {
+  this.setState(()=>({
+    selectedOption: undefined
+  }))
+}
 
+  renderList() {
     return this.props.words.map((word, index) => {
       return (
 
 
         <Link
-          to={{ pathname: `/detail/${word.title}`, state: { index, word } }}
+          to={{ pathname: `/detail/${word.title}`, state: { index, word } }} key={index}
         >
           <SingleCard
+
             key={index}
-            title={word.title}
-            info={word.info}
-            pic={word.pic}
-            seen={word.seen}
+          {...word}
           />
         </Link>
       );
@@ -35,12 +40,14 @@ class Board extends Component {
         <div className="background">
           <div className="wrapper">{this.renderList()}</div>
         </div>
+
     </div>
     );
   }
 }
 
 function mapStateToProps(state) {
+  console.log(state)
   return {
     words: state.sightSeen.words
   };

@@ -1,4 +1,4 @@
-import { USER_NAME, PASSWORD, NEW_USER, LOGGED, VICTORY } from "../constants/action-types";
+import { USER_NAME, PASSWORD, NEW_USER, LOGGED, VICTORY, RESET } from "../constants/action-types";
 
 export const logIn = {
   username: "",
@@ -34,6 +34,15 @@ export default function(state = logIn, action) {
       return {
         ...state ,
         victory: (!state.victory)
+      }
+    case RESET:
+      return {
+        ...state ,
+        username: "",
+        password: "",
+        logged: false,
+        newUser: true,
+        victory: false
       }
       default:
       return state;
