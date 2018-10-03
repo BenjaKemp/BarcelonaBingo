@@ -23,6 +23,7 @@ let store = createStore(persistedReducer)
 
 
 store.subscribe(()=>{
+
 })
 
 ReactDOM.render(<Provider store={store}>

@@ -9,6 +9,7 @@ import "./App.css";
 import Router from 'react-router-dom/BrowserRouter';
 import Route from 'react-router-dom/Route';
 import { Switch, Link } from "react-router-dom";
+import MyModal from './Modal/modal'
 
 
 
@@ -36,6 +37,7 @@ class App extends Component {
       <Router>
 
         <div className="fullscreen">
+          <MyModal/>
           <button  onClick={()=>{localStorage.clear(); this.props.reset('resetting')}}>
             <Link  to="/" />reset</button>
           <Switch>
