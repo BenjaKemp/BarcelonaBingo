@@ -20,10 +20,10 @@ class App extends Component {
 
 
   const getAll = () => {
+    console.log('herererere')
     fetch("http://localhost:3000/getall")
       .then(res => res.json())
       .then(words => {
-        console.log('words')
         this.props.setWords(words);
       })
       .catch(e => console.log(e));

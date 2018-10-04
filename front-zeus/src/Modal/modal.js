@@ -1,6 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
+import { connect } from "react-redux";
+import {closeModal} from '../actions'
 
 const customStyles = {
   content : {
@@ -12,22 +13,22 @@ const customStyles = {
     transform             : 'translate(-50%, -50%)'
   }
 };
+Modal.setAppElement(root)
 
-// Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 
-
-export default class myModal extends React.Component {
-  constructor() {
+ class myModal extends React.Component {
+  constructor(props) {
     super();
 
-    this.state = {
-      modalIsOpen: true
-    };
+
 
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
+
+
+
 
   openModal() {
     this.setState({modalIsOpen: true});
@@ -39,24 +40,22 @@ export default class myModal extends React.Component {
   }
 
   closeModal() {
-    this.setState({modalIsOpen: false});
+    this.props.close()
   }
 
   render() {
     return (
       <div>
-        <button onClick={this.openModal}>Open Modal</button>
         <Modal
-          isOpen={this.state.modalIsOpen}
+          isOpen={this.props.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Example Modal"
         >
-
           <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-          <button onClick={this.closeModal}>close</button>
-          <div>I am a modal</div>
+          <button onClick={this.props.close}>close</button>
+        <h1>{this.props.message}</h1>
           <form>
             <input />
           </form>
@@ -65,3 +64,14 @@ export default class myModal extends React.Component {
     );
   }
 }
+function mapStateToProps(state) {
+  console.log('state in modal' , state)
+  return {
+
+    modalIsOpen: state.modalInfo.modalIsOpen,
+    message: state.modalInfo.message
+
+  };
+}
+
+export default connect(mapStateToProps)(myModal)

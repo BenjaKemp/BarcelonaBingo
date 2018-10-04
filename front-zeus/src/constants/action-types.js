@@ -8,3 +8,5 @@ export const LOGGED= "LOGGED";
 export const VICTORY= "VICTORY";
 export const SCORE= "SCORE";
 export const RESET="RESET"
+export const POINT_SCORED="POINT_SCORED"
+export const CLOSE_MODAL="CLOSE_MODAL"
