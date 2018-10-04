@@ -1,9 +1,12 @@
 import io from 'socket.io-client';
+import {pointScored, closeModal} from '../actions'
+import store from '../index.js'
 const socket = io('http://localhost:3000/');
 
 socket.on('opponentScored', (data) => {
   let opponentPoint = data.description.sight
-  alert(`Look out! a rival has just seen ${opponentPoint}`)
+  store.dispatch(pointScored(opponentPoint, true))
+  setTimeout(()=>{store.dispatch(closeModal())}, 3000)
 } );
 
 export function score (seen) {

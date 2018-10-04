@@ -9,7 +9,6 @@ export default function(state = initialState, action) {
   findWinner(action.index);
   switch (action.type) {
     case SIGHT_SEEN:
-    console.log('action', action)
     score(action.value)
       return {
         ...state,

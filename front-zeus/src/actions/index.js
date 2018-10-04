@@ -1,4 +1,4 @@
-import {SELECT_WORD, SIGHT_SEEN, SET_WORDS, USER_NAME, PASSWORD, NEW_USER, LOGGED, VICTORY, RESET } from "../constants/action-types";
+import {SELECT_WORD, SIGHT_SEEN, SET_WORDS, USER_NAME, PASSWORD, NEW_USER, LOGGED, VICTORY, RESET, POINT_SCORED, CLOSE_MODAL } from "../constants/action-types";
 
 
 export function selectWord (word, index){
@@ -53,6 +53,21 @@ export function logged (value){
 export function reset (value){
   return {
     type: RESET,
+
+  }
+}
+export function pointScored (message){
+  return {
+    type: POINT_SCORED,
+    message
+
+  }
+}
+export function closeModal (){
+  console.log('we are hererere in close modal')
+  return {
+    type: CLOSE_MODAL
+
 
   }
 }
