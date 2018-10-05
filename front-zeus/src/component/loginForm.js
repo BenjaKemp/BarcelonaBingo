@@ -5,14 +5,7 @@ import AppBar from "material-ui/AppBar";
 import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
 import { password, username, newUser, logged } from "../actions/index";
-import {
-
-
-  Redirect
-
-} from "react-router-dom";
-
-
+import { Redirect } from "react-router-dom";
 
 class Login extends Component {
   handleClick = input => {
@@ -43,17 +36,18 @@ class Login extends Component {
 
     if (this.props.credentials.newUser) {
       fetch(`http://localhost:3000/users`, options[0])
-      .then(res=> {
-        if (res.status === 400) {
-          alert("this username already exists!, you have to pick another ");
-        } else if (res.status === 201) {
-          return res.json();
-        }})
-      .then(res => {
-        console.log('this is response' ,res)
-        localStorage.setItem('webToken', res.token);
-        this.props.logged();
-      });
+        .then(res => {
+          if (res.status === 400) {
+            alert("this username already exists!, you have to pick another ");
+          } else if (res.status === 201) {
+            return res.json();
+          }
+        })
+        .then(res => {
+          console.log("this is response", res);
+          localStorage.setItem("webToken", res.token);
+          this.props.logged();
+        });
     } else {
       fetch(`http://localhost:3000/sign-in`, options[1]).then(res => {
         if (res.status === 401) {
@@ -135,4 +129,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Login);

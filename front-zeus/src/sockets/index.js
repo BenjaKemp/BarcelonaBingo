@@ -1,6 +1,7 @@
 import io from 'socket.io-client';
 import {pointScored, closeModal} from '../actions'
 import store from '../index.js'
+import rootReducer from '../reducers/index'
 const socket = io('http://localhost:3000/');
 
 socket.on('opponentScored', (data) => {
@@ -10,6 +11,7 @@ socket.on('opponentScored', (data) => {
 } );
 
 export function score (seen) {
+  console.log(window.localStorage)
   socket.emit('score', {
     title: 'SCORE',
     message: 'player has scored',
