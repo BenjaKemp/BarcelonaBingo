@@ -8,26 +8,46 @@ Barcelona Bingo is a live action bingo game for playing in, unsurprisingly, Barc
 
 ## Getting Started
 
+You're going to need to download MongoDB and Nodemon, you can do this by following the links
+
+```
+https://nodemon.io/
+
+https://www.mongodb.com/
+```
+
 Clone the repo
 
 ```
-git clone https://github.com/BenjaKemp/ProjectZeus.git
+git clone https://github.com/BenjaKemp/BarcelonaBingo.git
 
-cd ProjectZeus
+cd BarcelonaBingo
 ```
 
-Install dependencies
+to set up the database, transfer into the 'server' subdirectory and then run 
+
+```
+yarn run load-db
+```
+
+once this has been completed. start the server up using the command
+
+```
+nodemon
+```
+
+Now, that our server is up, we need to fix dependencies on the front. Do this by transferring into the subdirectory 'front-zeus' and running 
 
 ```
 npm install
 ```
 
+from the command line.
+
 Start development server
 ```
 npm start
-```
-
-Clone the back end repo and follow the its instructions.
+```.
 
 ## Built with
 
