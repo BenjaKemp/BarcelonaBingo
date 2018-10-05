@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import "./containers.css";
 import { score } from "../sockets/index.js";
 
-
 export class Detail extends Component {
   render() {
     const word = this.props.location.state.word;
@@ -23,7 +22,7 @@ export class Detail extends Component {
               onClick={() => {
                 props.sightSeen(
                   props.match.params.id,
-                  props.location.state.key
+                  props.location.state.index
                 );
                 score(word.title);
               }}

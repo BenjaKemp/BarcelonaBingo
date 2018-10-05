@@ -1,5 +1,5 @@
-
-
+import {victory} from '../sockets'
+import {logIn} from '../reducers/reducer_log_in'
 const winnerIndex = [];
 const windex = [
   [0, 1, 2, 3, 4],
@@ -22,6 +22,7 @@ localStorage.setItem('winnerIndex', JSON.stringify(winnerIndex))
         return winnerIndex.includes(el);
       });
       if (answer && winnerIndex.length >= 5) {
+        victory(logIn.username)
         document.location.href="/Navigation";
         return;
       }

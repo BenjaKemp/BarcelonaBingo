@@ -17,45 +17,25 @@ Modal.setAppElement(root)
 
 
  class myModal extends React.Component {
-  constructor(props) {
-    super();
 
-
-
-    this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-  }
-
-
-
-
-  openModal() {
-    this.setState({modalIsOpen: true});
-  }
-
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    this.subtitle.style.color = '#f00';
-  }
-
-  closeModal() {
-    this.props.close()
-  }
+closeModal(){
+  this.props.modalIsOpen = !this.props.modalIsOpen;
+}
 
   render() {
     return (
       <div>
+        {console.log('this.props', this.props)}
         <Modal
           isOpen={this.props.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
+          onRequestClose={closeModal}
           style={customStyles}
           contentLabel="Example Modal"
         >
           <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
           <button onClick={this.props.close}>close</button>
-        <h1>{this.props.message}</h1>
+        <h1>Holy Moly, opponent has just seen {this.props.message}</h1>
           <form>
             <input />
           </form>
@@ -65,7 +45,6 @@ Modal.setAppElement(root)
   }
 }
 function mapStateToProps(state) {
-  console.log('state in modal' , state)
   return {
 
     modalIsOpen: state.modalInfo.modalIsOpen,
