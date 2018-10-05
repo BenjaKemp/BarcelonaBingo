@@ -45,9 +45,10 @@ npm install
 from the command line.
 
 Start development server
+
 ```
 npm start
-```.
+```
 
 ## Built with
 
