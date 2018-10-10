@@ -53,8 +53,8 @@ Modal.setAppElement(root)
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-          <button onClick={this.props.close}>close</button>
+        <button onClick={this.props.close}>close</button>
+          <h2 ref={subtitle => this.subtitle = subtitle}>You need to get a grip, Son. {this.props.username} has just seen </h2>
         <h1>{this.props.message}</h1>
           <form>
             <input />
@@ -68,7 +68,8 @@ function mapStateToProps(state) {
   return {
 
     modalIsOpen: state.modalInfo.modalIsOpen,
-    message: state.modalInfo.message
+    message: state.modalInfo.message,
+    username: state.modalInfo.username
 
   };
 }

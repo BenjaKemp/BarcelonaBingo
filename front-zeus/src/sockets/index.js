@@ -3,8 +3,11 @@ import {pointScored, closeModal} from '../actions'
 import store from '../index.js'
 const socket = io('http://localhost:3000/');
 
+
+
 socket.on('opponentScored', (data) => {
-  let opponentPoint = data.description.sight
+  console.log(data)
+  let opponentPoint = data.description
   store.dispatch(pointScored(opponentPoint, true))
   setTimeout(()=>{store.dispatch(closeModal())}, 3000)
 } );
@@ -13,9 +16,11 @@ console.log('tester data', data)
 } );
 
 export function score (seen) {
+    let username = localStorage.getItem('username');
   socket.emit('score', {
     title: 'SCORE',
     message: 'player has scored',
+    username: username,
     sight: seen
   })
 }

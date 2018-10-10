@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setWords, reset } from "./actions/index";
-import Board from "./containers/board";
-import VictoryScreen from "./Components/VictoryScreen";
-import Detail from "./containers/detail";
-import LoginPage from "./component/loginpage";
+import Board from "./containers/Board";
+import VictoryScreen from "./components/VictoryScreen";
+import Detail from "./containers/Detail";
+import LoginPage from "./LogDetails/loginpage";
 import "./App.css";
 import Router from 'react-router-dom/BrowserRouter';
 import Route from 'react-router-dom/Route';

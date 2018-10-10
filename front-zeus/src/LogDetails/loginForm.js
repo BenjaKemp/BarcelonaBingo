@@ -52,6 +52,7 @@ class Login extends Component {
       .then(res => {
         console.log('this is response' ,res)
         localStorage.setItem('webToken', res.token);
+        localStorage.setItem('username', res.playername);
         this.props.logged();
       });
     } else {
@@ -60,6 +61,8 @@ class Login extends Component {
           alert("your username and password was not recognised");
         } else if (res.status === 200) {
           console.log("you are good to go");
+            localStorage.setItem('webToken', res.token);
+            localStorage.setItem('username', res.playername);
           this.props.logged();
         }
       });

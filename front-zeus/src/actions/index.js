@@ -57,14 +57,15 @@ export function reset (value){
   }
 }
 export function pointScored (message){
+  console.log('this is received from socket', message)
   return {
     type: POINT_SCORED,
-    message
+    sight: message.sight,
+    username: message.username
 
   }
 }
 export function closeModal (){
-  console.log('we are hererere in close modal')
   return {
     type: CLOSE_MODAL
 
