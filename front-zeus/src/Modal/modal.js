@@ -65,7 +65,6 @@ Modal.setAppElement(root)
   }
 }
 function mapStateToProps(state) {
-  console.log('state in modal' , state)
   return {
 
     modalIsOpen: state.modalInfo.modalIsOpen,

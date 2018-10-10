@@ -1,8 +1,8 @@
 import React from "react";
 import { Component } from "react";
-import "./containers.css";
+import "../containers/containers.css";
 
-export default class Navigation extends Component {
+export default class VictoryScreen extends Component {
   render() {
 
     return (

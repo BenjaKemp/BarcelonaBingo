@@ -22,20 +22,24 @@ app
 const clients = [];
 
 io.on('connection', (socket) => {
-
+  console.log('a new user has joined')
+  clients.push(socket)
+  console.log('clients.length', clients.length)
+socket.join('game room')
     socket.emit( 'tester' ,{
       description: 'we have received your connection'
     })
 
 
   socket.on('score', (data)=> {
-
+socket.broadcast.emit('opponentScored', data);
   console.log('data firing from score', data)
 io.emit('opponentScored', {description: data});
 
   })
   socket.on('victory', ()=> {
     console.log('the game is over' )
+    io.emit('the game if over, punk');
 
   })
 })

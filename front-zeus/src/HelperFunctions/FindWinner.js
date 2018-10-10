@@ -22,7 +22,7 @@ localStorage.setItem('winnerIndex', JSON.stringify(winnerIndex))
         return winnerIndex.includes(el);
       });
       if (answer && winnerIndex.length >= 5) {
-        document.location.href="/Navigation";
+        document.location.href="/VictoryScreen";
         return;
       }
     });
