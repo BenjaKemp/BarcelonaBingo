@@ -1,5 +1,5 @@
 import { SIGHT_SEEN, SET_WORDS } from "../constants/action-types";
-import { findWinner } from "./reducer_winner";
+import { findWinner } from "../HelperFunctions/FindWinner";
 import { score } from "../sockets";
 
  const initialState = {

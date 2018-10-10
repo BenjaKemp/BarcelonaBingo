@@ -8,6 +8,9 @@ socket.on('opponentScored', (data) => {
   store.dispatch(pointScored(opponentPoint, true))
   setTimeout(()=>{store.dispatch(closeModal())}, 3000)
 } );
+socket.on('tester', (data) => {
+console.log('tester data', data)
+} );
 
 export function score (seen) {
   socket.emit('score', {

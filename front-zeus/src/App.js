@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setWords, reset } from "./actions/index";
 import Board from "./containers/board";
-import Navigation from "./containers/navigation";
+import VictoryScreen from "./Components/VictoryScreen";
 import Detail from "./containers/detail";
 import LoginPage from "./component/loginpage";
 import "./App.css";
@@ -20,7 +20,6 @@ class App extends Component {
 
 
   const getAll = () => {
-    console.log('herererere')
     fetch("http://localhost:3000/getall")
       .then(res => res.json())
       .then(words => {
@@ -43,7 +42,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={LoginPage} />
             <Route path="/board" component={Board} />
-            <Route path="/Navigation" component={Navigation} />
+            <Route path="/VictoryScreen" component={VictoryScreen} />
 
             <Route path="/detail/:id" component={Detail} />
           </Switch>

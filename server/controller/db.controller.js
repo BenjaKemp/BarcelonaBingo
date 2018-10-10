@@ -19,12 +19,10 @@ const shuffle = array => {
 
 
 const getAll = async ctx => {
-  console.log('calllingng g')
 
   const boardArray = await PicObjects.find((err, pics) => {
     if (err) return console.log("error in db");
   });
-  console.log('board',  boardArray)
   ctx.body = shuffle(boardArray);
 };
 

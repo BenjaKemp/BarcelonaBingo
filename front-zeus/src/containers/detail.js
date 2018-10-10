@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { sightSeen } from "../actions/index";
 import { Link } from "react-router-dom";
 import "./containers.css";
-import { score } from "../sockets/index.js";
+import { score } from "../sockets";
 
 
 export class Detail extends Component {
